@@ -1,0 +1,220 @@
+//container styles
+
+.container {
+  margin: 20px;
+  border: 2px solid #5B5B5B;
+  padding: 1.2rem;
+  width: 25rem;
+}
+
+//Header styles
+.header {
+  margin-bottom: 40px;
+  padding: 0px 5px;
+  h3 {
+    font-weight: 300;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: left;
+    margin: 0;
+    span.sort-header {
+      display: flex;
+      align-items: center;
+      float: right;
+      font-size: 12px;
+      font-weight: 500;
+      a {
+        margin-left:  10px;
+        cursor: pointer;
+       
+       }
+       .selected-text {
+        cursor: pointer;
+        color: black;
+        font-weight: 600;
+        filter: invert(0);
+      }
+      .unselected-text {
+        cursor: pointer;
+        color: #9B9B9B;
+        font-weight: 300;
+        filter: invert(0.7);
+      }
+    
+    }
+  }
+}
+
+.add-task-btn {
+    background: #9B9B9B;
+    color: white;
+    font-size: 15px;
+    padding: 0.6rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.list-container {
+  .form-controls {
+    background: #9B9B9B;
+    padding: 0.5rem;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    label {
+      color: #FFF;
+      font-size: 10px;
+    }
+    input {
+      background: transparent;  
+      display: block;
+      width: 100%;
+      // height: 25px;
+      border: none;
+      border-bottom: 1px solid #FFF;
+      margin-bottom: 3px;
+      color: #FFF;
+      font-size: 20px;
+      font-weight: 300; 
+      font-family: 'Roboto';
+    }
+    button {
+      background-color: #FFF;
+      // margin-right: 5px;
+      padding: 5px 20px;
+      border-radius: 30px;
+      color: #9B9B9B;
+      font-size: 20px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      display: flex;
+      align-items: center;
+      border: solid lightgrey 2px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      padding: 5px 0px;
+      
+      label {
+        p.item {
+          font-size: 1.17rem;
+          font-weight: 300;
+          margin: 0;
+        }
+        p.date {
+          font-size: 12px;
+          color: #9B9B9B;
+          
+        }
+      }
+    }
+  }
+
+  .completed-list {
+    ul {
+      padding-left: 10px;
+    }
+    p {
+      color: #9B9B9B;
+      font-style: italic;
+      font-size: 12px;
+      font-weight: 300;
+    }
+    p.header { 
+      font-size: 1rem;
+      display: flex;
+      margin: 2px;
+      padding-left: 0;
+    }
+    img {
+      // fill: #9B9B9B;
+      height: 20px;
+      filter: invert(0.6);
+    }
+    li {
+      border: none;
+      padding-left: 6px;
+      label {
+        padding-left: 0;
+        p {
+          text-decoration: line-through;
+        }
+        img {
+          height: 15px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .selectable-list-item-container {
+    padding-left: 20px;
+    // display: block;
+    position: relative;
+    // margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    // padding-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex: 1;
+    padding-right: 10px;
+
+    input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    input:checked ~ .checkmark {
+      background-color: #eee;
+    }
+    
+    input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 4px;
+      left: 0px;
+      height: 11px;
+      width: 11px;
+      border-radius: 50%;
+      border: solid 1px grey;
+    }
+    
+    .checkmark:after {
+      content: "\2713";
+      position: absolute;
+      display: none;
+      color: grey;
+      top: 5px;
+      left: 5px;
+    }
+  }
+
+  .selectable-list-item-container:hover input ~ .checkmark {
+    background-color: #eee;
+  }
+
+
+}

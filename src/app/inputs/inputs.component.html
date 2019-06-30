@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="header">
+    <h3 class="title">
+      To Do List:
+      <span class="sort-header">
+        Sort by:
+        <a (click)="isText = true;" [ngClass]="isText ? 'selected-text' : 'unselected-text' ">text</a>
+        <a (click)="isText = false;" [ngClass]="isText ? 'unselected-text' : 'selected-text' ">date</a>
+        <img src="../../assets/icons/baseline-arrow_drop_down-24px.svg" [ngClass]="isAscending ? 'unselected-text' : 'selected-text' " (click)="sortArray(isText, false)">
+        <img src="../../assets/icons/baseline-arrow_drop_up-24px.svg" [ngClass]="isAscending ? 'selected-text' : 'unselected-text' " (click)="sortArray(isText, true)">
+      </span>
+    </h3>
+  </div>
+  <div class="list-container">
+    <ul>
+      <li *ngFor="let item of todoLists">
+            <img src="../../assets/icons/baseline-drag_indicator-24px.svg">
+
+            <label class="selectable-list-item-container">
+              <p class="item">{{item.item}}</p>
+              <p class="item date">{{item.date}}</p>
+              <input type="checkbox" (click)="removeRow(item)">
+              <span class="checkmark"></span>
+            </label>
+      </li>
+    </ul>
+
+    <div class="completed-list">
+      <ul *ngIf="completedList.length > 0">
+        <p class="header"><img src="../../assets/icons/baseline-keyboard_arrow_down-24px.svg"> {{completedList.length}}
+          completed </p>
+        <li *ngFor="let item of completedList">
+          <label class="selectable-list-item-container">
+            <div class="d-flex">
+              <img src="../../assets/icons/baseline-check_circle-24px.svg" (click)="uncheckItem(item)">
+              <p class="item">{{item.item}}</p>
+            </div>
+
+            <p class="item date">{{item.date}}</p>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+    <!-- New Task -->
+    <div *ngIf="!openList">
+      <button class="add-task-btn" (click)="openList = true;">
+        <img src="../../assets/icons/baseline-add-24px.svg"> &nbsp;New Task
+      </button>
+    </div>
+
+    <div class="form-controls" *ngIf="openList">
+      <form [formGroup]="toDoForm">
+        <label>New Task</label>
+        <input required formControlName="item" type="text">
+        <label>Date By</label>
+        <input required formControlName="date" (keyup.enter)="addList()" type="date">
+      </form>
+      <div>
+        <button (click)="addList()">add</button>
+      </div>
+    </div>
+
+  </div>
+</div>
