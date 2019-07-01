@@ -4,24 +4,25 @@
       To Do List:
       <span class="sort-header">
         Sort by:
-        <a (click)="isText = true;" [ngClass]="isText ? 'selected-text' : 'unselected-text' ">text</a>
-        <a (click)="isText = false;" [ngClass]="isText ? 'unselected-text' : 'selected-text' ">date</a>
-        <img src="../../assets/icons/baseline-arrow_drop_down-24px.svg" [ngClass]="isAscending ? 'unselected-text' : 'selected-text' " (click)="sortArray(isText, false)">
-        <img src="../../assets/icons/baseline-arrow_drop_up-24px.svg" [ngClass]="isAscending ? 'selected-text' : 'unselected-text' " (click)="sortArray(isText, true)">
+        <a (click)="isText = true; sortArray(isText, isAscending)" [ngClass]="isText ? 'selected-text' : 'unselected-text' ">text</a>
+        <a (click)="isText = false; sortArray(isText, isAscending)" [ngClass]="isText ? 'unselected-text' : 'selected-text' ">date</a>
+        <img src="../../assets/icons/baseline-arrow_drop_down-24px.svg"
+          [ngClass]="isAscending ? 'unselected-text' : 'selected-text' " (click)="sortArray(isText, false)">
+        <img src="../../assets/icons/baseline-arrow_drop_up-24px.svg"
+          [ngClass]="isAscending ? 'selected-text' : 'unselected-text' " (click)="sortArray(isText, true)">
       </span>
     </h3>
   </div>
   <div class="list-container">
     <ul>
       <li *ngFor="let item of todoLists">
-            <img src="../../assets/icons/baseline-drag_indicator-24px.svg">
-
-            <label class="selectable-list-item-container">
-              <p class="item">{{item.item}}</p>
-              <p class="item date">{{item.date}}</p>
-              <input type="checkbox" (click)="removeRow(item)">
-              <span class="checkmark"></span>
-            </label>
+        <img src="../../assets/icons/baseline-drag_indicator-24px.svg">
+        <label class="selectable-list-item-container">
+          <p class="item">{{item.item}}</p>
+          <p class="item date">{{item.date}}</p>
+          <input type="checkbox" (click)="removeRow(item)">
+          <span class="checkmark"></span>
+        </label>
       </li>
     </ul>
 
@@ -65,4 +66,6 @@
     </div>
 
   </div>
+
+  <p class="error">{{errorMsg}}</p>
 </div>

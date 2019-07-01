@@ -2,7 +2,7 @@
 
 .container {
   margin: 20px;
-  border: 2px solid #5B5B5B;
+  border: 2px solid #5b5b5b;
   padding: 1.2rem;
   width: 25rem;
 }
@@ -26,11 +26,10 @@
       font-size: 12px;
       font-weight: 500;
       a {
-        margin-left:  10px;
+        margin-left: 10px;
         cursor: pointer;
-       
-       }
-       .selected-text {
+      }
+      .selected-text {
         cursor: pointer;
         color: black;
         font-weight: 600;
@@ -38,31 +37,28 @@
       }
       .unselected-text {
         cursor: pointer;
-        color: #9B9B9B;
+        color: #9b9b9b;
         font-weight: 300;
         filter: invert(0.7);
       }
-    
     }
   }
 }
 
 .add-task-btn {
-    background: #9B9B9B;
-    color: white;
-    font-size: 15px;
-    padding: 0.6rem;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: #9b9b9b;
+  color: white;
+  font-size: 15px;
+  padding: 0.6rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
 
 .list-container {
   .form-controls {
-    background: #9B9B9B;
+    background: #9b9b9b;
     padding: 0.5rem;
     padding-bottom: 20px;
     border-radius: 10px;
@@ -70,28 +66,28 @@
     align-items: flex-end;
     justify-content: space-evenly;
     label {
-      color: #FFF;
+      color: #fff;
       font-size: 10px;
     }
     input {
-      background: transparent;  
+      background: transparent;
       display: block;
       width: 100%;
       // height: 25px;
       border: none;
-      border-bottom: 1px solid #FFF;
+      border-bottom: 1px solid #fff;
       margin-bottom: 3px;
-      color: #FFF;
+      color: #fff;
       font-size: 20px;
-      font-weight: 300; 
-      font-family: 'Roboto';
+      font-weight: 300;
+      font-family: "Roboto";
     }
     button {
-      background-color: #FFF;
+      background-color: #fff;
       // margin-right: 5px;
       padding: 5px 20px;
       border-radius: 30px;
-      color: #9B9B9B;
+      color: #9b9b9b;
       font-size: 20px;
     }
   }
@@ -106,7 +102,7 @@
       border-radius: 5px;
       margin-bottom: 5px;
       padding: 5px 0px;
-      
+
       label {
         p.item {
           font-size: 1.17rem;
@@ -115,8 +111,7 @@
         }
         p.date {
           font-size: 12px;
-          color: #9B9B9B;
-          
+          color: #9b9b9b;
         }
       }
     }
@@ -127,12 +122,12 @@
       padding-left: 10px;
     }
     p {
-      color: #9B9B9B;
+      color: #9b9b9b;
       font-style: italic;
       font-size: 12px;
       font-weight: 300;
     }
-    p.header { 
+    p.header {
       font-size: 1rem;
       display: flex;
       margin: 2px;
@@ -158,7 +153,7 @@
       }
     }
   }
-  
+
   .d-flex {
     display: flex;
     align-items: center;
@@ -179,6 +174,9 @@
     flex: 1;
     padding-right: 10px;
 
+    p {
+      word-break: break-all;
+    }
     input {
       position: absolute;
       opacity: 0;
@@ -187,7 +185,7 @@
     input:checked ~ .checkmark {
       background-color: #eee;
     }
-    
+
     input:checked ~ .checkmark:after {
       display: block;
     }
@@ -201,7 +199,7 @@
       border-radius: 50%;
       border: solid 1px grey;
     }
-    
+
     .checkmark:after {
       content: "\2713";
       position: absolute;
@@ -216,5 +214,7 @@
     background-color: #eee;
   }
 
-
+  .error {
+    color: red;
+  }
 }
